@@ -1,0 +1,94 @@
+<div class="component-holder ng-binding ng-scope" data-component="crn-navbar" id="crn-navbar-986427"> 
+  <nav class="navbar navbar-default"> 
+    <div class="container-fluid"> 
+      <div class="navbar-header"> 
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+        <a class="component-holder ng-binding ng-scope navbar-brand" data-component="crn-image" href="#/home"> <img src="plugins/cronapp-framework-js/img/logo.png" style="max-height:30px; margin-top:-5px" id="crn-navbar-logo"> </a> 
+      </div> 
+      <div id="navbar" class="navbar-collapse collapse"> 
+        <ul class="nav navbar-nav" style="float:none"> 
+          <li class="dropdown component-holder" data-component=""> <a href="#/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-home"></i> <span>{{"Home.view.Home" | translate}}</span> </a> </li> 
+          <li class="dropdown component-holder" data-component="crn-menu-item" cronapp-security="visible : Administrators"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-users fa-lg"></i> <span>{{"Home.view.Admin" | translate}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu" style=""> 
+              <li class="active"><a href="#/home/admin/user" class="component-holder" data-component="crn-anchor">{{"Home.view.Users" | translate}}</a></li> 
+            </ul> </li> 
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-gear"></i> <span>{{"ChooseTheme" | translate}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu" style=""> 
+              <li ng-repeat="theme in themes" ng-click="changeTheme(theme)"> <a href="javascript:void(0);" ng-class="{'bg-primary': myTheme==theme}">{{theme}} <i class="fa fa-lg fa-check pull-right" ng-if="myTheme==theme"></i></a></li> 
+            </ul> </li> 
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="user-avatar" alt="{{session.user.name}}" ng-src="{{session.user.picture || 'plugins/cronapp-framework-js/dist/img/nophoto.png'}}" style="max-height:18px;max-width:18px"> <span>{{session.user.name}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu" style=""> 
+              <li><a class="component-holder" data-toggle="modal" data-target="#modalPassword" data-component="crn-anchor">{{"Home.view.ChangePassword" | translate}}</a></li> 
+              <li ng-click="logout()"><a href="javascript:void(0);"><span>{{"Home.view.Logout" | translate}}</span></a></li> 
+            </ul> </li> 
+          <li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>{{'Produto' | translate}}</span> <span class="caret"></span></a> 
+            <ul class="dropdown-menu" style=""> 
+              <li class="active"><a href="#/home/logged/item_produto" class="component-holder" xattr-fullsize="display:inline;" style="display:inline;" data-component="crn-anchor">{{'ItemProduto' | translate}}</a></li> 
+              <li class=""><a href="#/home/logged/produto" class="component-holder" xattr-fullsize="display:inline;" style="display:inline;" data-component="crn-anchor">{{'Produto' | translate}}</a></li> 
+              <li><a href="#/home/logged/Collapse" class="component-holder" xattr-fullsize="display:inline;" style="display:inline;" data-component="crn-anchor">Collapson</a></li> 
+            </ul></li> 
+        </ul> 
+      </div> 
+    </div> 
+  </nav> 
+</div> 
+<br> 
+<br> 
+<button class="btn btn-default component-holder" type="submit" ng-click="cronapi.util.makeCallServerBlocklyAsync('blockly.Desabilitar:Desabilitar', null, null)" xattr-size="" xattr-fullsize="" xattr-theme="btn-default" data-component="crn-button" id="crn-button-741975"> <span>Desabilitar</span></button><button class="btn btn-default component-holder" type="submit" ng-click="cronapi.util.makeCallServerBlocklyAsync('blockly.Habilitar:Executar', null, null)" xattr-size="" xattr-fullsize="" xattr-theme="btn-default" data-component="crn-button" id="crn-button-993634"> <span>Habilitar</span></button><div ui-view="" class="container-fluid main-view" data-container="true"> 
+  <datasource name="User" entity="api/cronapi/query/s4p4fpbmtrn6/" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" data-component="crn-datasource" class="component-holder" id="crn-datasource-527336"></datasource> 
+  <fieldset id="comboboxDavid"> 
+    <div class="component-holder ng-binding ng-scope" data-component="crn-combobox-dynamic" id="combobox"> 
+      <div class="form-group"> 
+        <label for="">Label</label> 
+        <ui-select crn-datasource="User" ng-model="datasource.active" theme="bootstrap" class="crn-select" ng-required="false"> 
+          <ui-select-match placeholder="Select..." class="">{{$select.selected.name}}</ui-select-match> 
+          <ui-select-choices repeat="rowData as rowData in datasource.data | filter : $select.search" class="" refresh="" refresh-deplay=""> 
+            <div class="">{{rowData.name}}</div> 
+          </ui-select-choices> 
+        </ui-select> 
+      </div> 
+    </div> 
+    
+
+    <p>Mascara para Grana Batendo </p>
+		<input type="text" style="text-align: right;" id="demo1" value="0.01">
+		<script type="text/javascript">$("#demo1").maskMoney();</script>
+	
+    
+  </fieldset> 
+</div><div class="component-holder ng-binding ng-scope" data-component="crn-textinput" id="crn-textinput-737156"><div class="form-group"><label for="exampleInputEmail1">Label</label><input type="text" mask="" mask-placeholder="" ng-required="false" ng-model="vars.input7533" class="form-control" id="input7533" placeholder="Placeholder text" ui-mask="#.##0,00"></div></div> 
+<div class="modal fade" id="modalPassword"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">{{"Home.view.ChangePassword" | translate}}</h4> 
+      </div> 
+      <div class="modal-body"> 
+        <form class="form-validation" autocomplete="off" name="form" role="form"> 
+          <div class="text-danger wrapper text-center" ng-show="authError"> 
+          </div> 
+          <div class="list-group list-group-sm"> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="oldPassword" placeholder="{{'Home.view.Old Password' | translate}}" ng-required="true"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPassword" placeholder="{{'Home.view.New Password' | translate}}" ng-required="true"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPasswordConfirmation" placeholder="{{'Home.view.Confirmation' | translate}}" ng-required="true"> 
+            </div> 
+          </div> 
+        </form> 
+      </div> 
+      <div class="modal-footer"> 
+        <button class="btn btn-primary" type="submit" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading">{{"Home.view.ChangePassword" | translate}}</button> 
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Home.view.Close' | translate}}</button> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+
+
+
